@@ -1,0 +1,208 @@
+/* #region Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* #endregion */
+
+/* #region Базовая разметка страницы */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+/* #endregion */
+
+/* #region Контейнер калькулятора */
+.calculator {
+  width: 100%;
+  max-width: 350px;
+  background-color: silver;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 5px 30px rgb(0, 0, 0);
+}
+/* #endregion */
+
+/* #region Экраны (display) */
+.display-container {
+  margin-bottom: 20px;
+  text-align: right;
+  border: 1px solid #85848452;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(209, 208, 208);
+
+  /* ⬇️ фиксируем размер экрана */
+  height: 100px;
+  overflow: hidden;
+}
+
+.secondary-display {
+  font-size: 14px;
+  color: #888;
+  min-height: 20px;
+  margin-bottom: 6px;
+  font-weight: 300;
+
+  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.main-display {
+  font-size: 48px;
+  color: #2e2e2ed3;
+  font-weight: 400;
+
+  /* ⬇️ КЛЮЧЕВОЕ */
+  height: 60px;
+  line-height: 1.2;
+  overflow: hidden;
+
+  word-break: break-all;
+  white-space: normal;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+}
+/* #endregion */
+
+/* #region Сетка кнопок */
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+/* #endregion */
+
+/* #region Общие стили кнопок */
+.btn {
+  padding: 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: #404040;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+}
+.btn:hover {
+  background-color: #505050;
+}
+.btn:active {
+  background-color: #303030;
+}
+/* #endregion */
+
+/* #region Цифры */
+.btn-number {
+  background-color: #404040;
+}
+.btn-number:hover {
+  background-color: #505050;
+}
+/* #endregion */
+
+/* #region Операции (зелёные) */
+.btn-operator {
+  background-color: #4CAF50;
+  color: #ffffff;
+}
+.btn-operator:hover {
+  background-color: #45a049;
+}
+.btn-operator:active {
+  background-color: #3d8b40;
+}
+/* #endregion */
+
+/* #region Кнопка равно */
+.btn-equals {
+  grid-column: span 2;
+  background-color: #4CAF50;
+  color: #ffffff;
+  font-size: 24px;
+  border-radius: 50px;
+  aspect-ratio: auto;
+}
+.btn-equals:hover {
+  background-color: #45a049;
+}
+.btn-equals:active {
+  background-color: #3d8b40;
+}
+/* #endregion */
+
+/* #region Функциональные кнопки (C, +/− и т.д.) */
+.btn-function {
+  background-color: #404040;
+  font-size: 18px;
+}
+#clear {
+  background-color: #ff4d4a96;
+  grid-column: span 2;
+  aspect-ratio: auto;
+  font-size: 20px;
+  border-radius: 50px;
+}
+#clear:hover {
+  background-color: #ff4d4acb;
+}
+#minus {
+  background-color: #4e77e6a9;
+  font-size: 20px;
+}
+#minus:hover {
+  background-color: #4e77e6cb;
+}
+.btn-function:hover {
+  background-color: #505050;
+}
+/* #endregion */
+
+/* #region Адаптив */
+@media (max-width: 480px) {
+  .calculator {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .display-container {
+    height: 90px;
+  }
+
+  .main-display {
+    font-size: 36px;
+    height: 50px;
+  }
+
+  .secondary-display {
+    font-size: 12px;
+    min-height: 16px;
+  }
+
+  .buttons-grid {
+    gap: 8px;
+  }
+
+  .btn {
+    font-size: 18px;
+    padding: 15px;
+    min-height: 60px;
+  }
+}
+/* #endregion */
